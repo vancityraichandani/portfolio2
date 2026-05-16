@@ -59,13 +59,15 @@ function Navbar() {
       </div>
 
       <div className="flex gap-14 text-sm text-zinc-400">
-        <a
-          onClick={() => window.dispatchEvent(new Event("open-ai-chat"))}
-          className="flex cursor-pointer items-center gap-2 text-zinc-400 hover:text-white hover:border-white/30 transition text-sm"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-green-600 animate-pulse" />
-          Somesh AI
-        </a>
+        {isHome ? (
+          <a
+            onClick={() => window.dispatchEvent(new Event("open-ai-chat"))}
+            className="flex cursor-pointer items-center gap-2 text-zinc-400 hover:text-white hover:border-white/30 transition text-sm"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-600 animate-pulse" />
+            Somesh AI
+          </a>
+        ) : null}
         {isHome ? (
           <Link href="/about" className="hover:text-white transition">
             About Me
