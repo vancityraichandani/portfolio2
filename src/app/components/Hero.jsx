@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { CgSoftwareDownload } from "react-icons/cg";
 import ResumeChat from "./ResumeChat";
+import { HoverImage } from "./HoverImage";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -103,7 +104,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      style={{ paddingTop: '155px' }}
+      style={{ paddingTop: "155px" }}
       className="relative flex items-center overflow-hidden hero-wrapper"
     >
       <canvas
@@ -151,7 +152,12 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl font-bold text-white leading-tight mt-2"
           >
-            Performance <br />
+            <HoverImage
+              word="performance"
+              image="/projects/performance-screenshot.png"
+              alt="Performance optimization"
+            />
+            <br />
             <span className="text-zinc-500">Designed Perfectly</span>
           </motion.h1>
 
